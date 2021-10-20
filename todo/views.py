@@ -52,6 +52,8 @@ def todo_update(request,id):
     return render(request, "todo/todo_update.html", context)
 
 def todo_delete(request,id):
+    
+    
     todo = get_object_or_404(Todo, id=id)
     if request.method=="POST":
         todo.delete()
@@ -61,3 +63,4 @@ def todo_delete(request,id):
     }    
     
     return render(request, "todo/todo_delete.html",context)
+
